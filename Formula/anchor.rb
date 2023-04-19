@@ -5,20 +5,20 @@
 class Anchor < Formula
   desc ""
   homepage "https://anchor.dev/"
-  version "0.0.1"
+  version "0.0.2"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/anchordotdev/cli/releases/download/v0.0.1/anchor_Darwin_x86_64.tar.gz"
-      sha256 "45334ad2f8d864c98729ffd7cf80d2c19eb3c1ce300defd240ba859df8ce0eb9"
+      url "https://github.com/anchordotdev/cli/releases/download/v0.0.2/anchor_Darwin_x86_64.tar.gz"
+      sha256 "7a58664de6b5988e4a8d782ed7a142c51574c65a64f7ee32b5957a4babf5bf5b"
 
       def install
         bin.install "anchor"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/anchordotdev/cli/releases/download/v0.0.1/anchor_Darwin_arm64.tar.gz"
-      sha256 "72c203f1a41e881f0baca4c3e85d54233734ac0c9b383a21d25a4e1b913b8342"
+      url "https://github.com/anchordotdev/cli/releases/download/v0.0.2/anchor_Darwin_arm64.tar.gz"
+      sha256 "a039b239892bd891c97d1b4c506279022c1e04bceffbfc4fed4b7b4bc5ebbf07"
 
       def install
         bin.install "anchor"
@@ -28,16 +28,16 @@ class Anchor < Formula
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/anchordotdev/cli/releases/download/v0.0.1/anchor_Linux_arm64.tar.gz"
-      sha256 "6379fe43c564ef29956bad25708eb19a111411026ccec509d1226cd31d750a62"
+      url "https://github.com/anchordotdev/cli/releases/download/v0.0.2/anchor_Linux_arm64.tar.gz"
+      sha256 "1af75aa79df2457bc41440f2f90c306574d6edd905587eaa3a17540a31b6d47c"
 
       def install
         bin.install "anchor"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/anchordotdev/cli/releases/download/v0.0.1/anchor_Linux_x86_64.tar.gz"
-      sha256 "bc0613c6a12dead1fddc1a7b7d901f58beaa864c31c628f3b9fcac14e14da398"
+      url "https://github.com/anchordotdev/cli/releases/download/v0.0.2/anchor_Linux_x86_64.tar.gz"
+      sha256 "3afd6f77f78948fcace61eb48594f4eb87e069f68583d38d572018f8eb77e5dd"
 
       def install
         bin.install "anchor"
