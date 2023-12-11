@@ -44,4 +44,8 @@ class Anchor < Formula
       end
     end
   end
+
+  test do
+    assert_match "Error: sign in required", shell_output("#{bin}/anchor trust")
+  end
 end
