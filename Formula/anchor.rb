@@ -5,20 +5,21 @@
 class Anchor < Formula
   desc "Command-line tools for Anchor.dev"
   homepage "https://anchor.dev/"
-  version "0.0.7"
+  version "0.0.8"
+  license "MIT"
 
   on_macos do
-    if Hardware::CPU.arm?
-      url "https://github.com/anchordotdev/cli/releases/download/v0.0.7/anchor_Darwin_arm64.tar.gz"
-      sha256 "9db50c3f7a1164c00aeb43603c5cc0655688dc71a992580ad68c0c8cf6980f93"
+    if Hardware::CPU.intel?
+      url "https://github.com/anchordotdev/cli/releases/download/v0.0.8/anchor_Darwin_x86_64.tar.gz"
+      sha256 "a4b968b938eb1df1cf4eafa39d465d274e6599a86168fc805b4f415d04cd4e48"
 
       def install
         bin.install "anchor"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/anchordotdev/cli/releases/download/v0.0.7/anchor_Darwin_x86_64.tar.gz"
-      sha256 "d76b6879790571ba95ca031151c9c56a39e1f793e7ba2ebcb3c4a75b60761e21"
+    if Hardware::CPU.arm?
+      url "https://github.com/anchordotdev/cli/releases/download/v0.0.8/anchor_Darwin_arm64.tar.gz"
+      sha256 "01006415b188afc7e28f222a2601fb6e8345f922ede936e1340837820192bb15"
 
       def install
         bin.install "anchor"
@@ -27,17 +28,17 @@ class Anchor < Formula
   end
 
   on_linux do
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/anchordotdev/cli/releases/download/v0.0.7/anchor_Linux_arm64.tar.gz"
-      sha256 "55afe7fbab8a192821ced95d236ed3c2181ff8aa106a2d4a68ffc3faf6c31231"
+    if Hardware::CPU.intel?
+      url "https://github.com/anchordotdev/cli/releases/download/v0.0.8/anchor_Linux_x86_64.tar.gz"
+      sha256 "0767808a9a229fbb41a31ad9ac363e4e80ca23f8cfcb1379ddf7b8e72f846382"
 
       def install
         bin.install "anchor"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/anchordotdev/cli/releases/download/v0.0.7/anchor_Linux_x86_64.tar.gz"
-      sha256 "5ef6daf51a8772877b5e35be1710b3c3bc064650a416f9cdf9db6fc8931be1f2"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/anchordotdev/cli/releases/download/v0.0.8/anchor_Linux_arm64.tar.gz"
+      sha256 "e81bcf7f73e493043fcab7f1c9f7d5717ccfa9db51d6f74f5947510141f589a0"
 
       def install
         bin.install "anchor"
@@ -46,7 +47,6 @@ class Anchor < Formula
   end
 
   test do
-    assert_match "anchor is a command line interface for the Anchor certificate management platform.",
-                 shell_output("#{bin}/anchor")
+    assert_match "anchor is a command line interface for the Anchor certificate management platform.", shell_output("#{bin}/anchor")
   end
 end
