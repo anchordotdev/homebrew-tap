@@ -44,4 +44,9 @@ class Anchor < Formula
       end
     end
   end
+
+  test do
+    assert_match "anchor is a command line interface for the Anchor certificate management platform.",
+                 shell_output("#{bin}/anchor")
+  end
 end
