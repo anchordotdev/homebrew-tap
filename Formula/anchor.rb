@@ -5,21 +5,21 @@
 class Anchor < Formula
   desc "Command-line tools for Anchor.dev"
   homepage "https://anchor.dev/"
-  version "0.0.8"
+  version "0.0.9"
   license "MIT"
 
   on_macos do
-    if Hardware::CPU.intel?
-      url "https://github.com/anchordotdev/cli/releases/download/v0.0.8/anchor_Darwin_x86_64.tar.gz"
-      sha256 "a4b968b938eb1df1cf4eafa39d465d274e6599a86168fc805b4f415d04cd4e48"
+    if Hardware::CPU.arm?
+      url "https://github.com/anchordotdev/cli/releases/download/v0.0.9/anchor_Darwin_arm64.tar.gz"
+      sha256 "41807eb98d9fb6ed18261ba13ef7720e4c6fcb5f36d0ff4791260e6328f2f35d"
 
       def install
         bin.install "anchor"
       end
     end
-    if Hardware::CPU.arm?
-      url "https://github.com/anchordotdev/cli/releases/download/v0.0.8/anchor_Darwin_arm64.tar.gz"
-      sha256 "01006415b188afc7e28f222a2601fb6e8345f922ede936e1340837820192bb15"
+    if Hardware::CPU.intel?
+      url "https://github.com/anchordotdev/cli/releases/download/v0.0.9/anchor_Darwin_x86_64.tar.gz"
+      sha256 "343a4a23ca321396eb654d2de5372e0e998253190bbd90f716937e68815524ab"
 
       def install
         bin.install "anchor"
@@ -28,17 +28,17 @@ class Anchor < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/anchordotdev/cli/releases/download/v0.0.8/anchor_Linux_x86_64.tar.gz"
-      sha256 "0767808a9a229fbb41a31ad9ac363e4e80ca23f8cfcb1379ddf7b8e72f846382"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/anchordotdev/cli/releases/download/v0.0.9/anchor_Linux_arm64.tar.gz"
+      sha256 "dd6424711c713fe4e97969a8b795fc97cf7c663e9f7db2eca317996f33a52d22"
 
       def install
         bin.install "anchor"
       end
     end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/anchordotdev/cli/releases/download/v0.0.8/anchor_Linux_arm64.tar.gz"
-      sha256 "e81bcf7f73e493043fcab7f1c9f7d5717ccfa9db51d6f74f5947510141f589a0"
+    if Hardware::CPU.intel?
+      url "https://github.com/anchordotdev/cli/releases/download/v0.0.9/anchor_Linux_x86_64.tar.gz"
+      sha256 "ad9f6ff6c0cab7751ebd04a4205b0cbc6ecb3918e26796a86f6b1c7706aa1f20"
 
       def install
         bin.install "anchor"
