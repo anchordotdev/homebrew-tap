@@ -5,21 +5,21 @@
 class Anchor < Formula
   desc "Command-line tools for Anchor.dev"
   homepage "https://anchor.dev/"
-  version "0.0.11"
+  version "0.0.12"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/anchordotdev/cli/releases/download/v0.0.11/anchor_Darwin_arm64.tar.gz"
-      sha256 "458db22d352035756fdc96cdb11d0fa61a2cd9849db4d45af1e9aee1e9d4726d"
+      url "https://github.com/anchordotdev/cli/releases/download/v0.0.12/anchor_Darwin_arm64.tar.gz"
+      sha256 "9825dec30353900b7f3dc188f91b85212ddc17d45e33c749f19f354021da422d"
 
       def install
         bin.install "anchor"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/anchordotdev/cli/releases/download/v0.0.11/anchor_Darwin_x86_64.tar.gz"
-      sha256 "9c8cddef564261c1d6ef2f8e3ed06b01e6a3b30f6ef95f13923f1341fe021e15"
+      url "https://github.com/anchordotdev/cli/releases/download/v0.0.12/anchor_Darwin_x86_64.tar.gz"
+      sha256 "b4d7cc5939033aa77a288427e5f04f5b7f2b9bfb6c011ad50a7efd030aeef42a"
 
       def install
         bin.install "anchor"
@@ -28,17 +28,17 @@ class Anchor < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/anchordotdev/cli/releases/download/v0.0.11/anchor_Linux_x86_64.tar.gz"
-      sha256 "ffa3fe29120fa319e6cad4f1599782a30666ca87236dc180ef1ebe53d0bf60ff"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/anchordotdev/cli/releases/download/v0.0.12/anchor_Linux_arm64.tar.gz"
+      sha256 "a76f8dc6629e5fdd998f322a2c5b4e17cd8c664226aff8d60c62447004f184d3"
 
       def install
         bin.install "anchor"
       end
     end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/anchordotdev/cli/releases/download/v0.0.11/anchor_Linux_arm64.tar.gz"
-      sha256 "2d57b9d5cf350a29d2cae7439218b4d65f727b23557590d10a4793537f2c65b8"
+    if Hardware::CPU.intel?
+      url "https://github.com/anchordotdev/cli/releases/download/v0.0.12/anchor_Linux_x86_64.tar.gz"
+      sha256 "da30e07135b5f65d67209617956c66c19a37e79129489caa6bd529e16a3109c5"
 
       def install
         bin.install "anchor"
