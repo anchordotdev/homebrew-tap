@@ -5,21 +5,21 @@
 class Anchor < Formula
   desc "Command-line tools for Anchor.dev"
   homepage "https://anchor.dev/"
-  version "0.0.19"
+  version "0.0.20"
   license "MIT"
 
   on_macos do
-    if Hardware::CPU.arm?
-      url "https://github.com/anchordotdev/cli/releases/download/v0.0.19/anchor_Darwin_arm64.tar.gz"
-      sha256 "39a3b74f945f0cbefb359e8e28971d9efcb8a9d53dd46aecc4aaf07e4eefbe00"
+    if Hardware::CPU.intel?
+      url "https://github.com/anchordotdev/cli/releases/download/v0.0.20/anchor_Darwin_x86_64.tar.gz"
+      sha256 "8b5fd07b7e5077d8a732ded7714e75110e9508f37e6b3926411e841691404569"
 
       def install
         bin.install "anchor"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/anchordotdev/cli/releases/download/v0.0.19/anchor_Darwin_x86_64.tar.gz"
-      sha256 "b143c0d4d4cde9e7eea674f15cf1933255eb140f97b7815fe1a712ba583b40aa"
+    if Hardware::CPU.arm?
+      url "https://github.com/anchordotdev/cli/releases/download/v0.0.20/anchor_Darwin_arm64.tar.gz"
+      sha256 "8bac6d29d324b8c38e3fc611e94c60016d47b2f76247ed9093354bf67ce22f9c"
 
       def install
         bin.install "anchor"
@@ -28,17 +28,17 @@ class Anchor < Formula
   end
 
   on_linux do
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/anchordotdev/cli/releases/download/v0.0.19/anchor_Linux_arm64.tar.gz"
-      sha256 "e1a5038e594e8cf3fcd3ab9157b67213c4e8e7a7adb6ef3cee45e75ba7405a0c"
+    if Hardware::CPU.intel?
+      url "https://github.com/anchordotdev/cli/releases/download/v0.0.20/anchor_Linux_x86_64.tar.gz"
+      sha256 "2417b809d470107306ae2031edb0c047d0f2a2f6ade34109335432542d062e60"
 
       def install
         bin.install "anchor"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/anchordotdev/cli/releases/download/v0.0.19/anchor_Linux_x86_64.tar.gz"
-      sha256 "7c712f905a91a27bbf8a7b5ac98e06df786657fb6d6cd72b7fe29cc6a3b60f0d"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/anchordotdev/cli/releases/download/v0.0.20/anchor_Linux_arm64.tar.gz"
+      sha256 "f576d8a42266629b8ac7ff4c80064fd8405fde0f5897e137ccecec80f443ae61"
 
       def install
         bin.install "anchor"
