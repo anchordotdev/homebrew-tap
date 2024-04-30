@@ -5,21 +5,21 @@
 class Anchor < Formula
   desc "Command-line tools for Anchor.dev"
   homepage "https://anchor.dev/"
-  version "0.0.27"
+  version "0.0.28"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/anchordotdev/cli/releases/download/v0.0.27/anchor_MacOS_x86_64.zip"
-      sha256 "fe38d924c462e7a84a214199088baf32b75b5d0bb6419f75910c46a099b9162e"
+      url "https://github.com/anchordotdev/cli/releases/download/v0.0.28/anchor_MacOS_x86_64.zip"
+      sha256 "8e088b4a3e0fedcc11a405964cb6642a03936c451e45c752035a1022a054392f"
 
       def install
         bin.install "anchor"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/anchordotdev/cli/releases/download/v0.0.27/anchor_MacOS_arm64.zip"
-      sha256 "94eb9541484ca2413f34274c1417e06b3a644c8c217f0ac16060276d825ac3d1"
+      url "https://github.com/anchordotdev/cli/releases/download/v0.0.28/anchor_MacOS_arm64.zip"
+      sha256 "2a9042ec5de634842c3c31d578b73e468f7b0be7a2bc10cfabd8449aac8b604d"
 
       def install
         bin.install "anchor"
@@ -29,16 +29,16 @@ class Anchor < Formula
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/anchordotdev/cli/releases/download/v0.0.27/anchor_Linux_x86_64.tar.gz"
-      sha256 "ea67f5236f983fcc3aefdb44c81c1577cd5b80a7459183cbb8527588c0265bcf"
+      url "https://github.com/anchordotdev/cli/releases/download/v0.0.28/anchor_Linux_x86_64.tar.gz"
+      sha256 "fd6facd5caef78d7cfb8b459a2b7cd01eb084b4a12d4d24d7b43b3b41cc96489"
 
       def install
         bin.install "anchor"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/anchordotdev/cli/releases/download/v0.0.27/anchor_Linux_arm64.tar.gz"
-      sha256 "0da40c3d3c9f5d715fff4321b2b75356048881cc3927fbee4b07d38c4e74561c"
+      url "https://github.com/anchordotdev/cli/releases/download/v0.0.28/anchor_Linux_arm64.tar.gz"
+      sha256 "d57c653aa71764e22ba7fcac325b45eb1cabf75e9a63f3646e391f05588b2c1e"
 
       def install
         bin.install "anchor"
