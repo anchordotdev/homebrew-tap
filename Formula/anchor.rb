@@ -5,21 +5,21 @@
 class Anchor < Formula
   desc "Command-line tools for Anchor.dev"
   homepage "https://anchor.dev/"
-  version "0.0.34"
+  version "0.0.35"
   license "MIT"
 
   on_macos do
-    if Hardware::CPU.intel?
-      url "https://github.com/anchordotdev/cli/releases/download/v0.0.34/anchor_MacOS_x86_64.zip"
-      sha256 "67ce2cf4fda28ffa5fafe52f335f4d505939bfca90f726c0c1a070c37925028d"
+    on_intel do
+      url "https://github.com/anchordotdev/cli/releases/download/v0.0.35/anchor_MacOS_x86_64.zip"
+      sha256 "16098cb31bf4e0a707a5782c9f06486ca406ce1282ad96b157539ed03b075f7a"
 
       def install
         bin.install "anchor"
       end
     end
-    if Hardware::CPU.arm?
-      url "https://github.com/anchordotdev/cli/releases/download/v0.0.34/anchor_MacOS_arm64.zip"
-      sha256 "7b10eeba34fc503b94b0f1e79305779a16aab9e2fcd29ffca212c7538507be53"
+    on_arm do
+      url "https://github.com/anchordotdev/cli/releases/download/v0.0.35/anchor_MacOS_arm64.zip"
+      sha256 "4ba2936d5528cfd4d1a558a988437d24b6e0a9b49e067b2b3067074f1835d772"
 
       def install
         bin.install "anchor"
@@ -28,20 +28,24 @@ class Anchor < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/anchordotdev/cli/releases/download/v0.0.34/anchor_Linux_x86_64.tar.gz"
-      sha256 "961a15e0de73ee97d79b4f470c3a08c5e22648cde682189d65184073c8616dec"
+    on_intel do
+      if Hardware::CPU.is_64_bit?
+        url "https://github.com/anchordotdev/cli/releases/download/v0.0.35/anchor_Linux_x86_64.tar.gz"
+        sha256 "c1e4e1a15c75742dc3971b4a62a34aaedecff93bb4a497c1a5810105ea418a73"
 
-      def install
-        bin.install "anchor"
+        def install
+          bin.install "anchor"
+        end
       end
     end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/anchordotdev/cli/releases/download/v0.0.34/anchor_Linux_arm64.tar.gz"
-      sha256 "b8c656d150176f43bbf1cc025628d26ef5072a8b2042310acf8005fec81aabc6"
+    on_arm do
+      if Hardware::CPU.is_64_bit?
+        url "https://github.com/anchordotdev/cli/releases/download/v0.0.35/anchor_Linux_arm64.tar.gz"
+        sha256 "eef7fac377aea1fe6fa729d35309be901b2fc2df5e82dd2df709c48e8d4025cb"
 
-      def install
-        bin.install "anchor"
+        def install
+          bin.install "anchor"
+        end
       end
     end
   end
