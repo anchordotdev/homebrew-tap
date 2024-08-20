@@ -5,21 +5,21 @@
 class Anchor < Formula
   desc "Command-line tools for Anchor.dev"
   homepage "https://anchor.dev/"
-  version "0.1.0"
+  version "0.1.1"
   license "MIT"
 
   on_macos do
     on_intel do
-      url "https://github.com/anchordotdev/cli/releases/download/v0.1.0/anchor_MacOS_x86_64.zip"
-      sha256 "1e150eecb209d21e6b3f5246c2034c52cd4321042d732e7e9ef28253003636e6"
+      url "https://github.com/anchordotdev/cli/releases/download/v0.1.1/anchor_MacOS_x86_64.zip"
+      sha256 "553ab354541bd42dd93ece7fcebd72e68ae2e9df99cc1ad26e4787b78c864118"
 
       def install
         bin.install "anchor"
       end
     end
     on_arm do
-      url "https://github.com/anchordotdev/cli/releases/download/v0.1.0/anchor_MacOS_arm64.zip"
-      sha256 "c6dbc14c9abc414db6457022581f5f6a3205643cfeb4d48ea9025c65719d95b9"
+      url "https://github.com/anchordotdev/cli/releases/download/v0.1.1/anchor_MacOS_arm64.zip"
+      sha256 "7f9e959a3ca8cc3b32cbbab4bcb4589c7ba346f1204ff5fdc6b529e1b2167e4d"
 
       def install
         bin.install "anchor"
@@ -30,8 +30,8 @@ class Anchor < Formula
   on_linux do
     on_intel do
       if Hardware::CPU.is_64_bit?
-        url "https://github.com/anchordotdev/cli/releases/download/v0.1.0/anchor_Linux_x86_64.tar.gz"
-        sha256 "20b4b69aeb6bed1d9cbd985b6684cef0f23030a0946c45dd1b1ebb55df173c1a"
+        url "https://github.com/anchordotdev/cli/releases/download/v0.1.1/anchor_Linux_x86_64.tar.gz"
+        sha256 "37d1267c76c0cc3e67cab14c65cd43d0d0de2d75534a14158dd16bee878f755a"
 
         def install
           bin.install "anchor"
@@ -40,8 +40,8 @@ class Anchor < Formula
     end
     on_arm do
       if Hardware::CPU.is_64_bit?
-        url "https://github.com/anchordotdev/cli/releases/download/v0.1.0/anchor_Linux_arm64.tar.gz"
-        sha256 "6ed952aceec83bc62b69c47e70d31159efec9b051221f5b3fe7d693813dda6f5"
+        url "https://github.com/anchordotdev/cli/releases/download/v0.1.1/anchor_Linux_arm64.tar.gz"
+        sha256 "9a6a10c04547ed7f026f8d829da27aa55608d2952143e6a20c531603f07c5062"
 
         def install
           bin.install "anchor"
